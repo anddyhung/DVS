@@ -1,0 +1,58 @@
+import { useEffect } from 'react';
+// material-ui
+import { Box, FormControl, InputAdornment, InputBase, SvgIcon } from '@mui/material';
+
+// ==============================|| HEADER CONTENT - SEARCH ||============================== //
+
+const SearchForm = () => {
+  useEffect(() => {
+    const inputSearch = document.getElementById('header-search');
+    if (inputSearch != null) inputSearch.style.padding = '0px 0px';
+  });
+
+  return (
+    <Box
+      sx={{
+        width: '80%',
+        ml: { xs: 0, md: 1 },
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'
+      }}
+    >
+      <FormControl sx={{ width: '100%' }}>
+        <InputBase
+          size="small"
+          style={{ paddingLeft: '10px' }}
+          id="header-search"
+          startAdornment={
+            <InputAdornment position="start" sx={{ display: 'flex', alignItems: 'center', mr: '0.8rem' }}>
+              <SvgIcon>
+                <svg width="28px" height="28px" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="carbon:search">
+                    <path
+                      id="Vector"
+                      fill="#949A9C"
+                      d="M29.7579 27.8361L22.2059 20.2841C24.0207 18.1054 24.9257 15.311 24.7326 12.482C24.5395 9.65309 23.2632 7.00751 21.1692 5.09563C19.0752 3.18376 16.3247 2.15279 13.4899 2.2172C10.6551 2.28161 7.95428 3.43644 5.94927 5.44146C3.94426 7.44647 2.78943 10.1473 2.72501 12.9821C2.6606 15.8169 3.69157 18.5673 5.60344 20.6614C7.51532 22.7554 10.1609 24.0317 12.9898 24.2248C15.8188 24.4179 18.6132 23.5129 20.7919 21.6981L28.3439 29.2501L29.7579 27.8361ZM4.75793 13.2501C4.75793 11.4701 5.28577 9.73003 6.2747 8.24998C7.26363 6.76994 8.66924 5.61639 10.3138 4.9352C11.9583 4.25401 13.7679 4.07578 15.5137 4.42305C17.2596 4.77032 18.8632 5.62748 20.1219 6.88615C21.3806 8.14483 22.2377 9.74847 22.585 11.4943C22.9323 13.2401 22.754 15.0497 22.0728 16.6943C21.3917 18.3388 20.2381 19.7444 18.7581 20.7333C17.278 21.7223 15.538 22.2501 13.7579 22.2501C11.3718 22.2475 9.08414 21.2984 7.39689 19.6112C5.70964 17.9239 4.76058 15.6363 4.75793 13.2501Z"
+                    />
+                  </g>
+                </svg>
+              </SvgIcon>
+            </InputAdornment>
+          }
+          aria-describedby="header-search-text"
+          inputProps={{
+            'aria-label': 'weight'
+          }}
+          placeholder="Search for Jobs"
+          sx={{
+            height: '1rem',
+            fontSize: '18px'
+          }}
+        />
+      </FormControl>
+    </Box>
+  );
+};
+
+export default SearchForm;
